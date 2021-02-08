@@ -17,13 +17,14 @@ document.getElementById('run').addEventListener('click',function(){
 
 
         image.setAttribute("src",pokemon.sprites.front_default)
+        image.setAttribute("id","sprites")
 
-        document.getElementById("pokedexscreen").appendChild(image)
-        document.getElementById("pokedexscreen").appendChild(nameParagraph)
-        document.getElementById("pokedexscreen").appendChild(idParagraph)
-        document.getElementById("pokedexscreen").appendChild(movesParagraph)
-        document.getElementById("pokedexscreen").appendChild(evolvedfromParagraph)
-        document.getElementById("pokedexscreen").appendChild(evolutionparagraph)
+        document.getElementById("screen").appendChild(image)
+        document.getElementById("screen").appendChild(nameParagraph)
+        document.getElementById("screen").appendChild(idParagraph)
+        document.getElementById("screen").appendChild(movesParagraph)
+        document.getElementById("screen").appendChild(evolvedfromParagraph)
+        document.getElementById("screen").appendChild(evolutionparagraph)
 
 
         var newarray=[]

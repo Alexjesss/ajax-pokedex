@@ -170,3 +170,29 @@ body {
 }
 
 
+#run{
+    position: relative;
+    height:50px;
+    width:50px;
+    top:-600px;
+    margin:auto;
+
+}
+
+#input{
+    position: relative;
+    height:50px;
+    width:270px;
+    top:-600px;
+}
+#sprites {
+    position: relative;
+    top: -66px;
+    left: 100px;
+}
+
+p {
+    top: -136px;
+    position: relative;
+    left: 13px;
+}
