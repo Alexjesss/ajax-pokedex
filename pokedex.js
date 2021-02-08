@@ -48,7 +48,7 @@ document.getElementById('run').addEventListener('click',function(){
 
 
         if(speciesdata.evolves_from_species===null){
-            evolvedfromParagraph.innerText="no prior evoluation"
+            evolvedfromParagraph.innerText="no prior evolution"
         }else {
             evolvedfromParagraph.innerText = "evolved from: " + speciesdata.evolves_from_species.name
         }
