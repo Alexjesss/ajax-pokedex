@@ -159,7 +159,7 @@ body {
 }
 
 .background {
-    width: 461px;
+    width: 512px;
     height: 81px;
     position: relative;
     margin: auto;
@@ -167,6 +167,17 @@ body {
     border-radius: 10px;
     top: 96px;
     right: 73px;
+}
+
+.background-button {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    margin: auto;
+    background-color: black;
+    top: 96px;
+    left: 20px;
 }
 
 
