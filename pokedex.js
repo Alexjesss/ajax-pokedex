@@ -1,36 +1,62 @@
 
+
+let image = document.createElement("img");
+let idParagraph = document.createElement("p");
+let movesParagraph= document.createElement("p");
+let evolvedfromParagraph= document.createElement("p");
+let nameParagraph = document.createElement("p");
+
 document.getElementById('run').addEventListener('click',function(){
+
 
     async function pokedex(){
         let input = document.getElementById('input').value
         let data = await fetch('https://pokeapi.co/api/v2/pokemon/'+input);
-        let poke = await data.json();
+        let pokemon = await data.json();
 
-        console.log(poke)
+        image.setAttribute("src",pokemon.sprites.front_default)
+        
 
-        var image = document.createElement("img");
-        let paragraph1 = document.createElement("p")
-        image.setAttribute("src",poke.sprites.front_default)
-        document.getElementById("pokedexscreen").appendChild(paragraph1)
         document.getElementById("pokedexscreen").appendChild(image)
+        document.getElementById("pokedexscreen").appendChild(nameParagraph)
+        document.getElementById("pokedexscreen").appendChild(idParagraph)
+        document.getElementById("pokedexscreen").appendChild(movesParagraph)
+        document.getElementById("pokedexscreen").appendChild(evolvedfromParagraph)
 
-        let paragraph = document.createElement("p");
 
 
         var newarray=[]
-        for (let i = 0; i < poke.moves.length; i++) {
+        for (let i = 0; i < pokemon.moves.length; i++) {
             if(i<=5) {
-                newarray.push(poke.moves[i].move.name)
+                newarray.push(pokemon.moves[i].move.name)
             }
         }
-        paragraph1.innerText="ID: "+poke.id
 
-        document.getElementById("pokedexscreen").appendChild(paragraph)
-        paragraph.innerText="moves: "+newarray.join(",  ");
+        nameParagraph.innerText=pokemon.name;
+        idParagraph.innerText="ID: "+pokemon.id
+        movesParagraph.innerText="moves: "+newarray.join(",  ");
 
-        let evolutionsreq =await fetch('https://pokeapi.co/api/v2/evolution-chain/'+poke.id+'/')
-        let evolutions = await evolutionsreq.json()
-        console.log(evolutions)
+
+
+        let speciesurl = await fetch('https://pokeapi.co/api/v2/pokemon-species/'+pokemon.id)
+        let speciesdata= await speciesurl.json()
+
+
+
+        if(speciesdata.evolves_from_species===null){
+            evolvedfromParagraph.innerText="no prior evoluation"
+        }else {
+            evolvedfromParagraph.innerText = "evolved from: " + speciesdata.evolves_from_species.name
+        }
+
+
+
+
+        let evolutionchain=await fetch(speciesdata.evolution_chain.url)
+        let evolutiondata = await evolutionchain.json();
+
+        console.log(evolutiondata.chain.evolves_to[0])
+
 
     }
     pokedex();
