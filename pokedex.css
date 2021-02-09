@@ -1,10 +1,9 @@
 body {
-    min-height: 100vh;
     width: 100%;
     margin: 0;
     padding: 0;
+    overflow: hidden;
     box-sizing: border-box;
-    background-color: lightblue;
     background-image: url("background.gif");
     background-repeat: no-repeat;
     background-size: cover;
@@ -300,13 +299,13 @@ p {
 
 }
 
-.next-button {
+.prev-button {
     left: 329px;
-    top: -757px;
+    top: -780px;
 }
 
-.prev-button {
-    top: -795px;
+.next-button {
+    top: -772px;
     left: 365px;
 }
 
@@ -321,9 +320,11 @@ p {
 }
 
 .title {
+    margin: auto;
+    height: 180px;
+    width: 300px;
+    top: 97px;
     position: relative;
-    height: 100px;
-    width: 100px;
 }
 
 #first-pokemon, #second-pokemon, #third-pokemon {
@@ -343,4 +344,5 @@ p {
     position: relative;
     height: 79px;
 }
+
 
