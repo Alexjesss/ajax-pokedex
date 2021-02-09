@@ -256,13 +256,14 @@ body {
 #sprites {
     position: relative;
     top: -126px;
-    left: 85px;
+    left: 120px;
 }
 
 p {
     top: -210px;
     position: relative;
     left: 13px;
+    margin-bottom: -6px;
 }
 
 .deco1,.deco2 {
