@@ -25,8 +25,6 @@ document.getElementById('run').addEventListener('click',function(){
         document.getElementById("screen").appendChild(movesParagraph)
         document.getElementById("screen").appendChild(evolvedfromParagraph)
         document.getElementById("screen").appendChild(evolutionparagraph)
-
-
         var newarray=[]
         for (let i = 0; i < pokemon.moves.length; i++) {
             if(i<=5) {
@@ -57,18 +55,67 @@ document.getElementById('run').addEventListener('click',function(){
         let evolutionchain=await fetch(speciesdata.evolution_chain.url)
         let evolutiondata = await evolutionchain.json();
 
-        let lastevoluation = await fetch('https://pokeapi.co/api/v2/pokemon-species/'+evolutiondata.chain.evolves_to[0].species.name)
-        let lastspecie= await lastevoluation.json()
-        let firstspecie= lastspecie.evolves_from_species.name
+        document.getElementById('first-pokemon').innerHTML="";
+        document.getElementById('second-pokemon').innerHTML="";
+        document.getElementById('third-pokemon').innerHTML="";
+       if(evolutiondata.chain.evolves_to[0]!==undefined){
 
-        let firstEvoluation=evolutiondata.chain.evolves_to[0].species.name
+
+
+        let lastevolution = await fetch('https://pokeapi.co/api/v2/pokemon-species/'+evolutiondata.chain.evolves_to[0].species.name)
+        let lastspecie= await lastevolution.json()
+
+        let firstEvolution= lastspecie.evolves_from_species.name
+        let secondEvolution=evolutiondata.chain.evolves_to[0].species.name
+
+
+        let firstevolutionpicture = await fetch('https://pokeapi.co/api/v2/pokemon/'+firstEvolution);
+        let pokemon1 = await firstevolutionpicture.json();
+
+        let secondevolutionpicture = await fetch('https://pokeapi.co/api/v2/pokemon/'+secondEvolution);
+        let pokemon2 = await secondevolutionpicture.json();
+
+
+
+
+
+
+        let firstevolutionimage = document.createElement('img')
+        firstevolutionimage.setAttribute('src',pokemon1.sprites.front_default)
+        firstevolutionimage.setAttribute('id','first-evolution')
+
+     let secondevolutionimage = document.createElement('img')
+        secondevolutionimage.setAttribute('src',pokemon2.sprites.front_default)
+        secondevolutionimage.setAttribute('id','second-evolution')
+
+
+
+
+
+
+
 
              if(evolutiondata.chain.evolves_to[0].evolves_to[0]!==undefined){
-            let secondEvoluation= evolutiondata.chain.evolves_to[0].evolves_to[0].species.name
-           evolutionparagraph.innerText=firstspecie+","+firstEvoluation+","+secondEvoluation
-             }else{
-                 evolutionparagraph.innerText=firstspecie+","+firstEvoluation
+                 let thirdEvolution= evolutiondata.chain.evolves_to[0].evolves_to[0].species.name
+
+                 let thirdevolutionpicture = await fetch('https://pokeapi.co/api/v2/pokemon/'+thirdEvolution);
+                 let pokemon3 = await thirdevolutionpicture.json();
+
+                 let thirdevolutionimage = document.createElement('img')
+                 thirdevolutionimage.setAttribute('src',pokemon3.sprites.front_default)
+                 thirdevolutionimage.setAttribute('id','third-evolution')
+
+                document.getElementById('first-pokemon').appendChild(firstevolutionimage)
+                document.getElementById('second-pokemon').appendChild(secondevolutionimage)
+                document.getElementById('third-pokemon').appendChild(thirdevolutionimage)
+
+
+
+             }else if(evolutiondata.chain.evolves_to[0]!==undefined){
+                 document.getElementById('first-pokemon').appendChild(firstevolutionimage)
+                 document.getElementById('second-pokemon').appendChild(secondevolutionimage)
              }
+       }
     }
 
 
