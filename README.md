@@ -16,5 +16,5 @@ Make a functional pokedex in pairs of two.
 As a team Alexandra and Elia complemented each other quite well. With Elia's strong knowledge of Javascript and Alexandra's creativity and knowledge of CSS 
 , the end result was a great succes.
 
-![We made it!](https://wall.alphacoders.com/big.php?i=592678)
+![We made it!](https://www.toychamp.be/media/catalog/product/0/1/01424447_002.jpg)
 
