@@ -3,6 +3,9 @@ body {
     padding: 0;
     background-color: lightblue;
     background-image: url("background.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
 }
 
 #run {
@@ -311,4 +314,22 @@ p {
     position: relative;
     top: -922px;
     left: 309px;
+}
+
+.title {
+    position: relative;
+    height: 100px;
+    width: 100px;
+}
+
+#first-pokemon, #second-pokemon, #third-pokemon {
+
+    position: relative;
+    top: -775px;
+    left: 20px;
+    background-color: #bfbffa;
+    width: 60px;
+    height: 40px;
+    display: inline-block;
+
 }
