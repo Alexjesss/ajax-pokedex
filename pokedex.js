@@ -56,10 +56,18 @@ document.querySelectorAll('button')[i].addEventListener('click',function(){
             let evolutiondata = await evolutionchain.json();
 
 
+
             //maybe remove this, this part of the code is to get all the possible evoluations of a given pokémon. doesn't work with variations
             let lastevoluation = await fetch('https://pokeapi.co/api/v2/pokemon-species/' + evolutiondata.chain.evolves_to[0].species.name)
             let lastspecie = await lastevoluation.json()
             let firstspecie = lastspecie.evolves_from_species.name
+
+        if(speciesdata.evolves_from_species===null){
+            evolvedfromParagraph.innerText="no prior evolution"
+        }else {
+            evolvedfromParagraph.innerText = "evolved from: " + speciesdata.evolves_from_species.name
+        }
+
 
             let firstEvoluation = evolutiondata.chain.evolves_to[0].species.name
 

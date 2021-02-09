@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: lightblue;
+    background-image: url("background.gif");
 }
 
 #run {
@@ -21,7 +22,7 @@ body {
 .rectangle {
     width: 400px;
     height: 300px;
-    background-color: red;
+    background-color:#ff632a;
     position: relative;
     margin: auto;
     margin-top: 50px;
@@ -44,7 +45,7 @@ body {
     height: 300px;
     right: 4px;
     top: -319px;
-    background-color: red;
+    background-color: #ff632a;
     position: relative;
     clip-path: polygon(
             0 10%,
@@ -67,7 +68,7 @@ body {
     height: 300px;
     right: 2px;
     top: -646px;
-    background-color: red;
+    background-color:#ff632a;
     position: relative;
     clip-path: polygon(0 11%, 15% 0, 83% 0, 99% 10%, 100% 92%, 90% 100%, 13% 100%, 0% 90%, 0% 10%);
     margin: auto;
@@ -89,14 +90,14 @@ body {
 .side1 {
     left: -251px;
     transform: rotate(170deg);
-    top: -963px;
+    top: -960px;
     z-index: -1;
 }
 
 .side2 {
     left: 242px;
     transform: rotate(15deg);
-    top: -984px;
+    top: -982px;
     z-index: -1;
 }
 
@@ -116,14 +117,14 @@ body {
 }
 
 .sound, .sound2,.sound3,.sound4 {
-    background-color: #4d4c4c;
+    background-color: #56100a;
     position: relative;
     height: 3px;
     width: 50px;
     transform: rotate(160deg);
     margin: auto;
-    left: 166px;
-    top: 292px;
+    left: 179px;
+    top: 262px;
     margin-top: 5px;
 }
 
@@ -144,7 +145,7 @@ body {
     margin: auto;
     background-color: #a4a4fd;
     border-radius: 10px;
-    top: -71px;
+    top: -72px;
 }
 
 .screen-sides {
@@ -154,12 +155,12 @@ body {
     margin: auto;
     background-color: #a4a4fd;
     border-radius: 10px;
-    top: 86px;
+    top: 50px;
     right: 5px;
 }
 
 .background {
-    width: 461px;
+    width: 512px;
     height: 81px;
     position: relative;
     margin: auto;
@@ -169,30 +170,145 @@ body {
     right: 73px;
 }
 
+.background-button {
+    height: 174px;
+    width: 101px;
+    border-radius: 0 50px 50px 0;
+    position: relative;
+    margin: auto;
+    background-color: black;
+    top: -273px;
+    left: -253px;
+}
+
+.pokedex-bg-button {
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    position: relative;
+    margin: auto;
+    background-color: lightgrey;
+    top: -431px;
+    left: -283px;
+}
+
+.button-line {
+    height: 10px;
+    width: 142px;
+    position: relative;
+    margin: auto;
+    background-color: black;
+    top: -502px;
+    left: -283px;
+}
+
+.pokedex-bg-button2 {
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    position: relative;
+    margin: auto;
+    background-color: black;
+    top: -563px;
+    left: -283px;
+}
+
+.pokedex-button {
+    height: 85px;
+    width: 85px;
+    border-radius: 50%;
+    position: relative;
+    margin: auto;
+    background-color: #a4a4fd;
+    top: -661px;
+    left: -283px;
+}
+
 
 #run{
+    height: 85px;
+    width: 85px;
+    border-radius: 50%;
     position: relative;
-    height:50px;
-    width:50px;
-    top:-600px;
-    margin:auto;
+    margin: auto;
+    background-color: #a4a4fd;
+    top: -661px;
+    left: -283px;
+    cursor: pointer;
 
 }
 
 #input{
     position: relative;
-    height:50px;
-    width:270px;
-    top:-600px;
+    height: 30px;
+    width: 240px;
+    top: 210px;
+    border-radius: 10%;
+    z-index: 1;
+    left: 11px;
 }
 #sprites {
     position: relative;
-    top: -66px;
-    left: 100px;
+    top: -126px;
+    left: 85px;
 }
 
 p {
-    top: -136px;
+    top: -210px;
     position: relative;
     left: 13px;
+}
+
+.deco1,.deco2 {
+    background-color: #56100a;
+    position: relative;
+    height: 10px;
+    width: 50px;
+    transform: rotate(30deg);
+    margin: auto;
+    left: -180px;
+    top: -636px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+.deco-button {
+    background-color: lightgrey;
+    border-radius: 50%;
+    height: 8px;
+    width: 8px;
+    position: relative;
+    left: 41px;
+    top: 1px;
+
+}
+
+.next-button,.prev-button {
+    background-color: #89c55d;
+    border-radius: 50%;
+    height: 22px;
+    width: 22px;
+    position: relative;
+    cursor: pointer;
+
+}
+
+.next-button {
+    left: 329px;
+    top: -757px;
+}
+
+.prev-button {
+    top: -795px;
+    left: 365px;
+}
+
+.switch-button {
+    background-color: #eefcc2;
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    position: relative;
+    top: -922px;
+    left: 309px;
 }
