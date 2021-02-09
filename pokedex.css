@@ -327,9 +327,15 @@ p {
     position: relative;
     top: -775px;
     left: 20px;
-    background-color: #bfbffa;
     width: 60px;
     height: 40px;
     display: inline-block;
 
+}
+
+
+#first-evolution, #second-evolution, #third-evolution {
+    top: -25px;
+    position: relative;
+    height: 79px;
 }
